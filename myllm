@@ -1,14 +1,16 @@
 #!/bin/bash
 
+scriptdir="$( dirname -- "$BASH_SOURCE"; )";
+
 echo "Choose one option:"
 read -p "(1) Start Local LLM   (2) Stop Local LLM   (3) Check if local LLM is running -> " user_input
 
 # start container
 if (( user_input == 1 )); then
-    podman compose -f ./myllm_docker-compose.yml up --detach
+    podman compose --file="$scriptdir/myllm_docker-compose.yml" up --detach
 # stop container
 elif (( user_input == 2 )); then
-    podman compose -f ./myllm_docker-compose.yml down
+    podman compose --file="$scriptdir/myllm_docker-compose.yml" down
 # check container running status
 else
     op=$(podman ps | grep -E 'ollama|ollama-webui' | wc -l)

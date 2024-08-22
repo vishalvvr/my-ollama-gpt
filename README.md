@@ -22,17 +22,15 @@ To run `myllm`, execute the following command:
 ./myllm
 ```
 
-## OR
+#### OR
 
 If you prefer to use `myllm` as a command, follow these steps:
 
-1.  Copy `myllm` and `myllm_docker-compose.yml` to `/opt`:
-	```bash
-	sudo  cp myllm myllm_docker-compose.yml /opt
+1.  ```bash
+	sudo cp myllm myllm_docker-compose.yml /opt
 	```
-2. Add `/opt` to your PATH:
-	```bash
-   export  PATH=$PATH:/opt
+2. ```bash
+   export PATH=$PATH:/opt
 	```
 3. Now you can run:
    ```bash
